@@ -1633,7 +1633,7 @@
 		}
 
 	a {
-		color: #6cc091;
+		color: #fff;
 		text-decoration: underline;
 	}
 
@@ -1655,7 +1655,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #555;
+		color: #fff;
 		font-weight: 400;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
@@ -2705,7 +2705,7 @@
 		}
 
 	#header {
-		color: #ffffff;
+		color: #fff;
 		cursor: default;
 		height: 3.25em;
 		left: 0;
