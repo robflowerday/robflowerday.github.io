@@ -2761,7 +2761,7 @@
 				padding-right: 0;
 			}
 
-			#header a.navPanelToggle {
+			#header a.<h4>PanelToggle {
 				display: none;
 				text-decoration: none;
 				height: 4em;
@@ -2839,7 +2839,8 @@
 		right: 0;
 		top: 0;
 		background: #6cc091;
-		color: #daefe3;
+		color: #fff;
+			<!--#daefe3;-->
 		height: 100%;
 		max-width: 80%;
 		width: 20em;
