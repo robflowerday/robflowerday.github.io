@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>K-Neareset Neighbors</h1>
+    <h2>What is KNN</h2>
+    <p>K-Nearest Neighbors or KNN is a Classification model, which means it learns from 
+        labeled data, e.g. using email content and sender to detect whether an email is 
+        spam or not.
+        
+        We'll go through the intuition of how a knn classifier works, then we will code one up.
+    </p>
+
+    <h2>Importing the Data</h2>
+    <p>In this lesson we will use a dataset called the iris dataset which can be found in<br> 
+        the sci-kit learn API. This is a very popular library for Machine Learning, as you<br> 
+        progress through the course you will see why.<br>
+        <br>
+        To import the dataset use the following commands<br>
+        <br>
+        from sklearn import datasets<br>
+        iris = datasets.load_iris()<br>
+        <br>
+        This will give you a dictionary, the dictionary holds several keys, the names of which<br>
+        can be accessed with the command<br>
+        <br>
+        iris.keys()<br>
+        <br>
+        They consist of:<br>
+            data<br>
+            target<br>
+            target_names<br>
+            DESCR<br>
+            feature_names<br>
+            filename<br>
+            <br>
+        data: gives the feature data that we will be used to train our model and make<br>
+            predictions of the target variable, in this case the observations of <br>
+            sepal width, sepal length, petal width and petal length of 3 species of plants<br>
+        target: the actual values (labels) of the target variables, in this case species of<br>
+            plant<br>
+        target_names: the different possible values that the target variable can take<br>
+        DESCR: A description of the dataset<br>
+        feature_names: the names of the columns (features) in the dataset, in this case - <br>
+            sepal width, sepal length, petal width and petal length<br>
+        filename: the path where the csv file containing the data is stored on your machine<br>
+    </p>
+
+    <h2>How KNN works</h2>
+    <p>A KNN classifier predicts the label of a given datapoint by finding the 'k' nearst<br>
+        labeled data points, where k is decided by the programmer, and labeling the datapoint <br>
+        with the most common label of the k points. Essentially giving each of the k neighbors <br>
+        a vote, and going with the majority.</p>
+
+    <h2>Visualising KNN</h2>
+    <p>KNN is easiest visualised when we only work with 2 feauture variables (so that we can <br>
+        visualise it in 2d on a graph). as well as using a scatter plot where we can colour <br>
+        the data points by the target variable.</p>
+</body>
