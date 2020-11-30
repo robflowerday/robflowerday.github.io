@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>Assessing Model Performance with Accuracy</h1>
+    <p>There are many ways to measure the performance of a classification Machine Learning <br>
+        model. The first you will learn hear is accuracy. This is very useful in some cases, <br>
+        but as you will find later has some important downsides.
+    </p>
+
+    <h2>How does it work</h2>
+    <p>The accuracy of a model is a score between 0 and 1, with 0 being entirely un accurate <br>
+        and 1 being perfectly accurate. The score is equal to the percentage of correct <br>
+        prediction a model makes / 100. The predicitons in a classification problem are <br>
+        predicted labels given to data points.<br>
+        <br>
+        As we saw in the previous lesson, we can train a model on all or part of a dataset.<br>
+        In a similar way, we can test the accuracy of a model on all or part of a dataset.<br>
+        We could find an accuracy score of a model on the data that we trained a model on, <br>
+        and we will. That said, the use of this score would only be applicable to the data <br>
+        used in the training process as in this case, the model has 'seen' all of the data <br>
+        it is predicting labels for.<br>
+
+        Instead of this, we are ussually more interested in the accuracy score of the test <br>
+        set (the set of data that the model has yet to 'see'). This score can give us an <br>
+        indication of how the model will perform in classifying other unseen data.
+    </p>
+
+    <h2>How to get the Accuracy Score</h2>
+    <p>First we need to import our data, build a model and fit the model as you have seen <br>
+        in the last lesson
+    </p>
+
+    <img src="trainknnoniris.png" alt="Training KNN Model on Iris Dataset">
+
+    <p>Now we obtain the accuracy score for our model. We don't need to actually predict <br>
+        any labels to do this, instead we can use the score function of our model, <br>
+        .score() and pass it 2 parameters, the first being the data we would want it to <br>
+        use for predictions, and the second being the actual labels for these data points.<br>
+        <br>
+        With the data we have, we could look to obtain 3 different accuracy scores, one <br>
+        based on all the data we have, one based on just the training set and one based on <br>
+        just the test set.<br>
+        <br>
+        Individually the accuracy of the score given from the data in the training set, and <br>
+        the data given in the test set can both be useful. Since the model has been trained <br>
+        only on the training set, using all the data combined to get a score would give an <br>
+        unuseful mix of a result.<br>
+        <br>
+        First we will find the score of the holdout set.
+    </p>
+
+    <img src="testscore.png" alt="Accuracy Score based on test data">
+
+    <p>This gives us a score of 0.95 meaning we based on this data alone, we can assume the <br>
+        model predicts labels with unknown data with 95% accuracy. (Most results will not be <br>
+        this high with an out of the box model.)<br>
+        <br>
+        However setting issues like sample size aside, we have only tested it with one part <br>
+        of the data as training, what section we used was bias, or unusual in some way. <br>
+        Our score would be meaningless. One solution to this issue is a method called <br>
+        cross_val_score, which we will look into later.<br>
+        <br>
+        Now we will look into the accuracy of the training set. You may be thniking, why <br>
+        bother. This won't tell us how well the model predicts labels for unknown data, <br>
+        which is true. It will tell us however how well it predicts the labels of the data <br>
+        it was trained on.<br>
+        <br>
+        This information is useful as it can indicate whether the model is overfitting or <br>
+        underfitting. I'll explain what this means in the next paragraph, but for now I'll <br>
+        show you how to get this score and what score is produced using our data and model.
+    </p>
+
+    <img src="trainscore.png" alt="Accuracy Score based on training data">
+
+    <h2>Overfitting and Underfitting</h2>
+    <p>As you saw before, we got 2 different accuracy scores when we used our model to <br>
+        predict on our training data and our test data. This is expected as the model has <br>
+        seen the training data before, and not the test data. We also know that the the <br>
+        score of the training data predictions can tell us whether the model is overfitting <br>
+        or underfitting, but not what that means.<br>
+        <br>
+        A model that overfits to the data is capable of predicting nearly all labels of the <br>
+        training data correctly, to the detrement of being able to generalise its predictions <br>
+        of unseen data. You will tell that a model is overfitting if its score on training <br>
+        data score is high, but its score on testing data is low.<br>
+        <br>
+        A model that underfits on the otherhand is not capable of predicting enough of the <br>
+        labels of the training data. This also leads to a poor ability to predict the labels <br>
+        of unseen data. You will tell that a model is underfitting if its score on training <br>
+        data score is low, with the score on testing data also being low.<br>
+        <br>
+        This means theres a sweet spot we have to find where the model is neither <br>
+        underfitting, or overfitting our data. We'll now look into how.
+    </p>
+
+    <h2>Finding the Sweet Spot</h2>
+    <p>We know that we have make a model that does not over or underfit the data, but all <br>
+        we control in the model is two things, so what can we change?<br>
+        <br>
+        We could change the data that we input to the model, or that we train it on. But <br>
+        as we can not ussually increase the number of data points we give it, this would <br>
+        mean picking only the data points we 'like' making the data inaccurate. This is <br>
+        true for bothe the data inputted for prediction and the training data.<br>
+        <br>
+        We therefore must use the only other variable we are in control of, the parameter <br>
+        we pass to the model, in this case, the number or n_neighbors.<br>
+        <br>
+        We will then see how these changes effect the accuracy score of the model when <br>
+        given both the training and the testing set and visualise this on a graph so that <br>
+        we can understand it.<br>
+        <br>
+        we again need to import the data and split it into a training and a testing set.
+    </p>
+
+    <img src="importsplitiris.png" alt="Import and split our data">
+
+    <p>instead of fitting one model though, we now need to fit many models with many <br>
+        different values for n_neighbors, then extract their trianing and testing accuracy <br>
+        scores. I'l use a for loop in the code shown below, each time adding the scores <br>
+        to their respective lists. The rest of the code, you have seen before.
+    </p>
+
+    <img src="traintestscores.png" alt="Scores with for loop">
+
+    <p>Now we have the scores, but it is much easier to extract insigts from them when we <br>
+        can visualise them, so we will plot it on a graph. I wont go into depth on how to <br>
+        plot this, but will show the code below. If you struggle with the code, there are <br>
+        many online tutorials for plotting data with python. Most using the popular package <br>
+        matplotlib, and if you want to go further look into tutorials on using seaborn.
+    </p>
+
+    <img src="accuracyvisual.png" alt="Visualisation of Accuracy">
+
+    <p>We want to maximise our models ability to predict the labels of 'unseen' data and so <br>
+        we can choose the number of n_neighbors based on the highest score for the model on <br>
+        the testing data.<br>
+        <br>
+        As can be seen, the model begins by overfitting to the data until it hits its sweet spot at n_neighbors = 8 or 10 or 12, then passes its sweet <br>
+        spot and begins to underfit the data as the number of n_neighbors increases.
+    </p>
+
+    <a href="trainingdata.html">Previous: Splitting Data with train_test_split</a>
+    <a href="logreg.html">Up Next: Logistic Regression</a>
+
+
+</body>
