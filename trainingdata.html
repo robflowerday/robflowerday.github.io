@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>Training Data and Train Test Split</h1>
+    <p>In the previous lesson we learnt how to train a classifier on 
+        a dataset and create predictions on new data. In the real world 
+        however, more often than not, we will not be given a set of data 
+        to train our model on and a set with which to make predictions. 
+        Instead we are given one dataset and we have to create these 
+        datasets from it.
+
+        This new datasets are called training sets and holdout or
+        testing sets.
+
+        To create a these two dataset from a single dataset, we want to 
+        split our two, with a percentage of our data becoming our 
+        training set, and the remainder becoming our test set.
+
+        Sci-kit-learn has a useful function that can perform this for us.
+        train_test_split().
+
+        This function takes 2 neccessary arguments, the feauture and 
+        target data you would like to split, and several optional 
+        arguments, including the test_size, being the proportion of 
+        your data that the function uses as data for your test set, 
+        the train_size, being the same as the test size, but for your 
+        training set, the random_state, being a seed with which you 
+        could recreate the data your function produces if you choose 
+        by passing the same argument, shuffle, which if set to True, 
+        shuffles your data before performing the split and stratify, 
+        which will ensure there is the same proportionof each target 
+        label in the test set and train set as there is in the 
+        actual data.
+
+        The output of train_test_split is 4 values and therefore should 
+        be unpacked into 4 values, these values are the feature data in 
+        the training set, the feature data in the test set, the target 
+        data in the training set and the target data in the test set.
+
+        An example of this is given below, importing the iris dataset 
+        as in the previous lesson.
+    </p>
+    <img src="traintestsplit.png" alt="example: train_test_split">
+</body>
