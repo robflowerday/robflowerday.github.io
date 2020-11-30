@@ -87,4 +87,39 @@
         Finally, point number 3 has 1 blue point and 2 red points as its 3 closest data points, <br>
         and so our model would label it as red.<br>
     </p>
+
+    <h2>Creating a Classifier</h2>
+    <p>Machine learning models learn from and predict data. They do this executing algorithms <br>
+        on data given to the model and storing the information learned. We call executing <br>
+        these algorithms, training the model. This training in most models is executed by <br>
+        calling the .fit() method on the model. The model then holds the stored data learned <br>
+        from the model.<br>
+        <br>
+        After this we can use the .predict() method on most models to predict a new label  <br>
+        for any given set of data as the model has been trained. <br>
+    </p>
+
+    <p>To create a KNN model in python we need to import the data in the same way as <br>
+        previously explained: <br>
+        from sklearn import datasets<br>
+        iris = datasets.load_iris()<br>
+        <br>
+        We then need to import the clasification model from the sci-kit-learn library<br>
+        from sklearn.neighbors import KNeighborsClassifier<br>
+        <br>
+        We can now instantiate a K Neighbors Classifier using an arbitrary value of 3 neighbors. <br>
+        model = KNeighborsClassifier(n_neighbors=3)<br>
+        <br>
+        Then we can fit the model to the data passing the feature data as the <br>
+        first parameter and the target data as the second argument to the fit method<br>
+        model.fit(iris.data, iris.target)<br>  
+        <br>
+        We can then create some new data points using numpy<br>
+        import numpy as np<br>
+        new_points = np.array([4.2, 1.7, 3.1, 0.8], [5.3, 2.1, 2.7, 0.2], [4.9, 3.4, 1.0, 0.3])<br>
+        <br>
+        Then we can predict the target values for the feature data we have just created<br>
+        predictions = model.predict(new_points)<br>
+        print(f"The predicted values for the new data points are: {predictions}")<br>
+    </p>
 </body>
