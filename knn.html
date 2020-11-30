@@ -101,27 +101,36 @@
 
     <p>To create a KNN model in python we need to import the data in the same way as <br>
         previously explained: <br>
-        from sklearn import datasets<br>
-        iris = datasets.load_iris()<br>
-        <br>
-        We then need to import the clasification model from the sci-kit-learn library<br>
-        from sklearn.neighbors import KNeighborsClassifier<br>
-        <br>
-        We can now instantiate a K Neighbors Classifier using an arbitrary value of 3 neighbors. <br>
-        model = KNeighborsClassifier(n_neighbors=3)<br>
-        <br>
-        Then we can fit the model to the data passing the feature data as the <br>
-        first parameter and the target data as the second argument to the fit method<br>
-        model.fit(iris.data, iris.target)<br>  
-        <br>
-        We can then create some new data points using numpy<br>
-        import numpy as np<br>
-        new_points = np.array([4.2, 1.7, 3.1, 0.8], [5.3, 2.1, 2.7, 0.2], [4.9, 3.4, 1.0, 0.3])<br>
-        <br>
-        Then we can predict the target values for the feature data we have just created<br>
-        predictions = model.predict(new_points)<br>
-        print(f"The predicted values for the new data points are: {predictions}")<br>
     </p>
+    
+    <img src="importdataset.png" alt="from sklearn import datasets">
+
+    <p>We then need to import the clasification model from the sci-kit-learn library
+    </p>
+    
+    <img src="importknn.png" alt="from sklearn.neighbors import KNeighborsClassifier">
+    
+    <p>We can now instantiate a K Neighbors Classifier using an arbitrary value of 3 neighbors.
+    </p>
+    
+    <img src="createmodel.png" alt="model = KNeighborsClassifier(n_neighbors=3)">
+   
+    <p>Then we can fit the model to the data passing the feature data as the <br>
+        first parameter and the target data as the second argument to the fit method.
+    </p>
+    
+    <img src="fitmodel.png" alt="model.fit(iris.data, iris.target)">
+   
+    <p>We can then create some new data points using numpy.
+    </p>
+    
+    <img src="numpynewpoints.png" alt="model.fit(import numpy as np)">
+   
+    <p>Then we can predict the target values for the feature data we have just created.
+    </p>
+    
+    <img src="targetvalues.png" alt="predictions = model.predict(new_points)">
+    
     <a href="typesofmachinelearning.html">Previous: Different Types of Machine Learning</a>
     <a href="traintestsplit.html">Up Next: Trian Test Split</a>
 </body>
