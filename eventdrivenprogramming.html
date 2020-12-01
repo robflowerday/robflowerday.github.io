@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>Event Driven Programming</h1>
+    <h2>What are the different styles of programming</h2>
+    <p>There are many types of programming styles, four of which are  Sequential <br>
+        programming, Object Oriented programming, Event driven programming and Concurrent <br>
+        programming. Each has benifits and draw backs, here we'll talk about Event Driven <br>
+        Programming.
+    </p>
+
+    <h2>Event Driven Programming Explanation</h2>
+    <p>Event driven programming is a stype of programming, where the program is designed to <br>
+        respond to events.<br>
+        <br>
+        These events can be interations with a user, or with the environment, for example a <br>
+        button being pressed, entry into a text box or a sensor detecting the outside <br>
+        temperature.<br>
+        <br>
+        Each event will have an appropriate response, this response is linked to the event by<br>
+        an event handler which performs an action by triggering a call back function.<br>
+        <br>
+        As an event can happen at any time, the event handler is 'active' within a loop and so <br>
+        i always 'listening'<br>
+        <br>
+        In contrast to sequential programming, event driven programming is <br>
+        non-deterministic. The control and flow of a program can is decided by events which <br>
+        trigger functions, but the timing of each function has infinite possibly permutations <br>
+        and the possible paths of even a small program may be imposiible to map out <br>
+        completely.<br>
+        <br>
+        the fact that it is non-deterministic leads to uncertainty so rather than <br>
+        understanding a program in the way we can understand a sequential program, <br>
+        understanding what might happrn at what point in time, we can understand a program by<br>
+        determining the state of the program.<br>
+        <br>
+        If we were to look at a simple program which uses an event driven program to turn on <br>
+        a lightbulb when a switch is pressed. The state of the program before the switch is <br>
+        pressed is a light that is turned off. The state after the switch being pressed is<br>
+        that the light is turned on.<br>
+        <br>
+        The number of states however can get very large very quickly. If there were for <br>
+        example 20 switches for 31 different devices, all with two states, on and off, we <br>
+        have 2 to the power of 31 possible states that the program could find itself in, <br>
+        being 2,147,483,648 which is more than 2 billion.<br>
+        <br>
+        States and events can be described using state diagams as shown in the next lesson.
+    </p>
+
+    <a href="statediagrams.html">Up Next: Designing an Event Driven Program</a>
+</body>
