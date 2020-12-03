@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>Linear Regression</h1>
+    <p> When talking about Machine Learning, Linear Regression is a supervised learning <br>
+        algorithm like our KNN model, unlike our KNN model however it is a regression model <br>
+        rather than a clasification model. This means that is predicts label as continous <br>
+        values rather than discrete values. Linear Regression models are used to predict a <br>
+        relationship between two factors.<br>
+        <br>
+        Given two sets of data points, each describing a seperate variable, linear regression<br>
+        entails creating a straitline that fits these points in in some way optimally. <br>
+        <br>
+        A strait line on a graph in 2 imentions can be written as y = mx + c, where y is the <br>
+        target variable that we want to predict, x is the feature vaiable used for prediction, <br>
+        m is the slope of the line on the graph (the gradient) and c is the point at which <br>
+        the line crosses the y axis on the graph.<br>
+        <br>
+        As we are trying to minimise an error function, we need to add it to our equation, <br>
+        this makes the equation of our line: y = mx + c + e, where e is the value of the error <br>
+        function.<br>
+        <br>
+        In trying to optimise our model, we want to find the values of m and c that minimises <br>
+        e.<br>
+        <br>
+        To calculate e, we need to decide an error function.<br>
+        <br>
+        Below is a graph showing some data. We have used the Boston dataset from <br>
+        sklearn.datasets which can be imported in the same way as the iris dataset was in our <br>
+        initial KNN model. We have plotted the average number of roooms and the average house <br>
+        price in thousands.
+    </p>
+
+    <img src="" alt="Plotting our data">
+
+    <p>You may be able to see from this graph that there is a positive correlation between <br>
+        number of rooms and house price. This means that as the number of rooms increases, <br>
+        we expect the average house price to increase.<br>
+        <br>
+        if I asked you to predict the price of a house given only the information that it <br>
+        has 6 rooms, using this graph, you migh be inclined to choose around the 20000 mark, <br>
+        because that is where the data points seem to be clustered. This would be a fair <br>
+        guess but we have a better way to make predictions, without doing any calculations <br>
+        ourselves.<br>
+        <br>
+        As mentioned before, Linear Regression tries to plot a line that is in some way <br>
+        optimal which it will use for predictions.<br>
+        <br>
+        Lets assume we have a line that is fit to the data as below.
+    </p>
+
+    <img src="" alt="Plotting a Line">
+
+    <p>What the Regression model would do is to look for the data given on the x-axis, in our <br>
+        case 6 rooms, find the point on the line at which the x-axis equals 6 and then search <br>
+        for the house value at that point. In this case around 27,000.
+    </p>
+
+    <img src="" alt="Calculating a Prediction">
+
+    <p>But as you can see, 25,000 is quite far off what we choose, so were we wrong?<br>
+        In the graph above, I drew a line on the graph, but this line wasn't fitted by our<br>
+        Linear Regression Model. We can now see where the error function comes in.<br>
+        <br>
+        But what error function can we use?<br>
+        <br>
+        Intuitively, we want the line to be as close as possible to all data points whilst <br>
+        remaining strait (as the regression is linear).<br>
+        <br>
+        We could therefore measure the verticaldistance between the line and each data point <br>
+        (this is called a residual) and adding them all together. This would give us a value <br>
+        known as the sum of the residuals and the start of this calculation is visualised <br>
+        below.
+    </p>
+
+    <img src="" alt="adding residuals">
+
+    <p>The issue with this however is that if we can a positive residual (from a point above <br>
+        the line) and a negative residual (from a point below the line), the two residuals <br>
+        could cancel each other out! This would mean that there would be number of lines that <br>
+        minimise our error function that are very poor fits to the data.<br>
+        <br>
+        This problem can be solved in two ways:<br>
+        <br>
+        1. using the absolute sum of residuals (here <br>
+        absolute means the positive version of a value, so the absolute value of 3 is 3, and <br>
+        the absolute value of -3 is also 3).<br>
+        <br>
+        2. Using the sum of the squared residuals, taking the square of each residual and <br>
+        summing the results. When we minimise this ressult it is called Ordinary Least 
+        Squares, or OLS for short.
+        <br>
+        Here we will use the OLS as our error function. This is the most common choice for <br>
+        many reasons, one of which being that it will always give us 1 unique result, whereas <br>
+        the sum of the absolute residuals can give us many optimal lines of best fit and <br>
+        therefore many 'correct' predictions for the same input.<br>
+    </p>
+
+    <h2>Putting it into practice</h2>
+    <p>Now that we understand Linear Regression with one predictor variable and one target <br>
+        variable, we'll build a Regressor.<br>
+        <br>
+        As in KNN, we will import a dataset from sci-kit-learn. We will use the Boston <br>
+        housing dataset. Here we will try to use the number or rooms, which using the .DESCR <br>
+        attribute we can see is denoted as RM, to predict the average house price.<br>
+        <br>
+        This example will assume you have a basic understanding of numpy and pandas.<br>
+        <br>
+        First we load the dataset, extract our number of rooms column and average house <br>
+        price data into variables and split our data into training and testing data.
+    </p>
+
+    <img src="" alt="Loading Boston Dataset, Extracting no. of Rooms, Splitting Data">
+
+    <p>Now in the same way as with KNN, we import LogisticRegression, fit our data and can <br>
+        predict on the test set.
+    </p>
+
+    <img src="" alt="Instantiate, fit and predict LogisticRegression Model">
+
+    <p>Up until now, we have used only 1 predictor variable. This has been to gain an <br>
+        understanding of Linear Regression and to allow us to visualise it. It has no problem <br>
+        however performing a Regression task with multiple predictor variables. This is known <br>
+        as multiple Linear Regression, but is called in exactly the same way, below I show a <br>
+        Linear Regression model from start to finnish, using the same dataset, but with all <br>
+        values used as predictor variables.
+    </p>
+
+    <img src="" alt="Multiple Linear Regression">
+
+    <p>In the next lesson we will see how we can measure the performance of our Regression <br>
+        model.
+    </p>    
+
+    <a href="scoringlinearregression.html">Previous: Measureing Performance of Linear Regression</a>
+    <a href="scoringlinearregression.html">Up Next: Measureing Performance of Linear Regression</a>
+
+</body>
