@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>Measuring Performance of Linear Regression Models</h1>
+    <p>We have previously used accuracy to measure performance of Classification models. <br>
+        As we are using continuous data in a Regression model rather than discrete data <br>
+        we cannot using accuracy isn't possible because with truely continuous data, <br>
+        there is a 0% chance of classifying the data exactly (for more on this look into <br>
+        probabilty with continuos data, for now we will move on from this point and accept <br>
+        that we cannot use accuracy in this scenario).<br>
+        <br>
+        What do we use instead?<br>
+        <br>
+        we use what's known as the r squared score, or r2.
+    </p>
+
+    <h2>R2 Score</h2>
+    <p>As the default scoring method for Linear Regression, this score is important to <br>
+        understand. The score is calculated using the equation:<br>
+        score equals the sum of the squared differences between the actual target values in<br> 
+        our model and the mean of all the target values divided by the sum of the squared <br>
+        residuals (as spoken about in the last lesson). All taken away from 1.<br>
+        <br>
+        In Mathematical notation this can be show as:
+    </p>
+
+    <img src="r2.png" alt="r2 equation">
+    
+    <p>To visualise this we can plot our data, and our linear regression line, aswell as <br>
+        the residuals. We would then square the residuals and sum the results to get SSE.
+    </p>
+
+    <img src="SSE" alt="visualising SSE">
+
+    <p>Then we could plot the data again, and plot a line at the mean of our price data, <br>
+        showing the residuals based on this line. Through the same process of squaring <br>
+        these distances and adding them together, we can get SST.
+    </p>
+
+    <img src="SST" alt="visualising SSE">
+
+    <p>We then simply follow the equationabouve substituting SSE and SST with our results.
+    </p>
+
+    <h2>A few important notes on R2</h2>
+    <p>The best score that can be attained from R2 is 1, meaning that the predictor is <br>
+        perfect with regards to the given data. (There is no variance from the fitted line).<br>
+        <br>
+        When the score is 0, there is no indication of a correlation between the data points <br>
+        in question, and so no predictive power.<br>
+        <br>
+        The score can be below 0, indicating the prediciton of the fitted line is worse than <br>
+        if we had chosen to always predict the average of our target data for every given <br>
+        data point.<br>
+        <br>
+        The score can be infinitely large and negative, so there is no 'worst score' in the <br>
+        way that we could have a 'best score' above.
+    </p>
+
+    <h2>Now to score our Linear Regression Model on the Boston Housing Dataset</h2>
+    <p>In the last lesson we created a Linear Regression Model that predicted the average <br>
+        house price given the average number of rooms per dwelling. Now we have a way to <br>
+        measure how good that model was at making predictions.<br>
+        <br>
+        We can calculate the r2 score that has been explained above using the .score() <br>
+        method of the model.<br>
+        <br>
+        Here we'll create the Linear Regression Model as before, then print the r2 score of <br>
+        the model.
+    </p>
+
+    <img src="r2score.png" alt="printing r2 score">
+
+    <p>This score was not very high, which may seem odd as the data seemed to be fairly well <br>
+        correlated.<br>
+        <br>
+        the default percentage of our data was split off, which is 25% with train_test_split, <br>
+        the point at which it was split though was made arbitrarily. Infact, if we do not set <br>
+        a seed and run the same code, multiple times, we can get very different results as <br>
+        shown here.
+    </p>
+
+    <img src="differentresults.png" alt="different results, same data">
+
+    <p>As can be seen, where the data is split can have a big impact on the score <br>
+        achieved.<br>
+        <br>
+        One solution to this is to use cross_val_score. This is a function that can be <br>
+        imported from the sci-kit-learn library. What is does is instead of making one <br>
+        training and one testing set, it splits the data into several datasets, trains the <br>
+        model on all but one, tests the model on the remaining dataset, calculates the score <br>
+        (or another metric that you are interested in) then repeats the process using a <br>
+        different sections of the data as the training data until all have been used.<br>
+        <br>
+        The upside to cross_val_score is that it is robust to outliers, which in this case <br>
+        means that our model won't be wrong, because it was trainined or testing using a <br>
+        'bad' portiong of our data.<br>
+        <br>
+        The downside to cross_val_scor is that it is computationally more expensive as it <br>
+        has to train a model as many times as the number of splits that are made in the data <br>
+        (this number can be chosen by the programmer).<br>
+        <br>
+        To call the function cross_val_score, it must be imported from sklearn as below.
+    </p>
+
+    <img src="importcross_val_score.png" alt="Import corss_val_score form sklearn">
+
+    <p>Then we have to pass it the Model we'd like it to use, the feature data we'd like <br>
+        it to use, the target data we'd like it to use, and the number of portions we'd like <br>
+        it to split the data into. This number is passed to the argument cv, stanfing for <br>
+        cross validation. Using cross_cal_score splitting the data into k portions is <br>
+        called k-fold Cross Validation.
+    </p>
+
+    <img src="k-foldimplementation.png" alt="cross_val_score implementation">
+
+    <p>As can be seen, we are given a list of scores. Each score in the list corresponds to <br>
+        the score on each potion ('fold') of the data, being used as a test set.<br>
+        <br>
+        in contrast to train_test_split however, if we were to repeat this process we get <br>
+        the same scores every time. 
+    </p>
+
+    <img src="k-foldmulti.png" alt="same code, same scores">
+
+    <p>This is because each time the model is trained, the test <br>
+        data is, in this order, the first k% of the data, then the second k % of the data, <br>
+        and so on until it is the last k% of the data, where k = 100/(the number of folds, <br>
+        which is the value passed as cv to croos_val_score).<br>
+        <br>
+        To aid understanding I have shown each portion of the data that the scores come <br>
+        from. Each graph plots the data points in the test set, and a line fit by a linear <br>
+        regression model trained on the rest of the data. Because the training set is  larger <br>
+        than the test set, the layout of the traiing data changes quite dramatically, but the <br>
+        line changes only slightly each time.
+    </p>
+
+    <img src="firstthreefolds.png" alt="First 3 folds of data">
+    
+    <p>The first 3 graphs show the first 3 folds with respective scores of 0.70708692, <br>
+        0.63476138 and 0.50385441 can be seen to roughly follow the correlation of the <br>
+        line with no outliers, though none are perfect because their datapoints are all <br>
+        offset from the line, by increasing amounts for each fold.
+    </p>
+
+    <img src="lasttwofolds.png" alt="Last two folds of data">
+
+    <p>The last 2 models persormed poorly. From looking at the graph, it is likely that in <br>
+        the 4th fold this was due to a large number of outliers in the testing set, and in <br>
+        the last fold, the training data had a slight, but consistant difference in the <br>
+        correlation between the rooms and price to to the testing set<br>
+        <br>
+        These differences are substantial, Unfortunately, we cannot just take the best score <br>
+        and say that our model performs this well. The difference in scores is largely due to <br>
+        differences in the test sets rather than the training sets. Because of this, we need <br>
+        to aggregate our results, the most common way to do this is using the mean as shown <br>
+        below. This will give us a score for the perdormance of our model. In this case, the <br>
+        score is low and so the model is not likely to be appropriate to use in order to <br>
+        calculate accurate preictions of house prices using their numbe of rooms.
+    </p>
+
+    <img src="averagescore.png" alt="average of scores">
+
+    <p>Using only one of these scores rather than the average, would only show us how the <br>
+        model will predict on data that fits the distribution of the appropriate test data <br>
+        given in the fold used to create that particular model. Calculating the mean will <br>
+        tell us how the data generalises to all unseen data (to the best of our ability) we <br>
+        do not know for example whether the whole dataset we have consists of outliers. This <br>
+        is where we would use statistical significance to guide our decisions, though I will <br>
+        not go into that here.<br>
+        <br>
+        Next we'll learn about Regularization.
+    </p>
+
+    <a href="linearregression.html">Previos: Linear Regression</a>
+    <a href="regularization.html">Up Next: Regularization</a>
+
+</body>
