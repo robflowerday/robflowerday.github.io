@@ -4,9 +4,9 @@
     <h1>Measuring Performance of Linear Regression Models</h1>
     <p>We have previously used accuracy to measure performance of Classification models. <br>
         As we are using continuous data in a Regression model rather than discrete data <br>
-        we cannot using accuracy isn't possible because with truely continuous data, <br>
+        we cannot using accuracy isn't possible because with truly continuous data, <br>
         there is a 0% chance of classifying the data exactly (for more on this look into <br>
-        probabilty with continuos data, for now we will move on from this point and accept <br>
+        probability with continuous data, for now we will move on from this point and accept <br>
         that we cannot use accuracy in this scenario).<br>
         <br>
         What do we use instead?<br>
@@ -26,13 +26,13 @@
 
     <img src="r2.png" alt="r2 equation">
     
-    <p>To visualise this we can plot our data, and our linear regression line, aswell as <br>
+    <p>To visualise this we can plot our data, and our linear regression line, as well as <br>
         the residuals. We would then square the residuals and sum the results to get SSE.
     </p>
 
     <img src="SSE.png" alt="visualising SSE">
 
-    <p>Then we could plot the data again, and plot a line at the mean of our price data, <br>
+    <p>Then we could plot the data again and plot a line at the mean of our price data, <br>
         showing the residuals based on this line. Through the same process of squaring <br>
         these distances and adding them together, we can get SST.
     </p>
@@ -49,7 +49,7 @@
         When the score is 0, there is no indication of a correlation between the data points <br>
         in question, and so no predictive power.<br>
         <br>
-        The score can be below 0, indicating the prediciton of the fitted line is worse than <br>
+        The score can be below 0, indicating the prediction of the fitted line is worse than <br>
         if we had chosen to always predict the average of our target data for every given <br>
         data point.<br>
         <br>
@@ -75,7 +75,7 @@
         correlated.<br>
         <br>
         the default percentage of our data was split off, which is 25% with train_test_split, <br>
-        the point at which it was split though was made arbitrarily. Infact, if we do not set <br>
+        the point at which it was split though was made arbitrarily. In fact, if we do not set <br>
         a seed and run the same code, multiple times, we can get very different results as <br>
         shown here.
     </p>
@@ -92,9 +92,9 @@
         (or another metric that you are interested in) then repeats the process using a <br>
         different sections of the data as the training data until all have been used.<br>
         <br>
-        The upside to cross_val_score is that it is robust to outliers, which in this case <br>
-        means that our model won't be wrong, because it was trainined or testing using a <br>
-        'bad' portiong of our data.<br>
+        The upside to cross_val_score is that it is robust to outliers, which in this case<br>
+        means that our model won't be assessed wrongly, because it was trained or testing <br>
+        using a 'bad' portion of our data.<br>
         <br>
         The downside to cross_val_scor is that it is computationally more expensive as it <br>
         has to train a model as many times as the number of splits that are made in the data <br>
@@ -107,7 +107,7 @@
 
     <p>Then we have to pass it the Model we'd like it to use, the feature data we'd like <br>
         it to use, the target data we'd like it to use, and the number of portions we'd like <br>
-        it to split the data into. This number is passed to the argument cv, stanfing for <br>
+        it to split the data into. This number is passed to the argument cv, standing for <br>
         cross validation. Using cross_cal_score splitting the data into k portions is <br>
         called k-fold Cross Validation.
     </p>
@@ -131,7 +131,7 @@
         To aid understanding I have shown each portion of the data that the scores come <br>
         from. Each graph plots the data points in the test set, and a line fit by a linear <br>
         regression model trained on the rest of the data. Because the training set is  larger <br>
-        than the test set, the layout of the traiing data changes quite dramatically, but the <br>
+        than the test set, the layout of the training data changes quite dramatically, but the <br>
         line changes only slightly each time.
     </p>
 
@@ -145,18 +145,18 @@
 
     <img src="lasttwofolds.png" alt="Last two folds of data">
 
-    <p>The last 2 models persormed poorly. From looking at the graph, it is likely that in <br>
+    <p>The last 2 models performed poorly. From looking at the graph, it is likely that in <br>
         the 4th fold this was due to a large number of outliers in the testing set, and in <br>
-        the last fold, the training data had a slight, but consistant difference in the <br>
-        correlation between the rooms and price to to the testing set<br>
+        the last fold, the training data had a slight, but significant difference in the <br>
+        correlation between the rooms and price to the testing set<br>
         <br>
         These differences are substantial, Unfortunately, we cannot just take the best score <br>
         and say that our model performs this well. The difference in scores is largely due to <br>
         differences in the test sets rather than the training sets. Because of this, we need <br>
         to aggregate our results, the most common way to do this is using the mean as shown <br>
-        below. This will give us a score for the perdormance of our model. In this case, the <br>
+        below. This will give us a score for the performance of our model. In this case, the <br>
         score is low and so the model is not likely to be appropriate to use in order to <br>
-        calculate accurate preictions of house prices using their numbe of rooms.
+        calculate accurate predictions of house prices using their number of rooms.
     </p>
 
     <img src="averagescore.png" alt="average of scores">
@@ -172,7 +172,7 @@
         Next we'll learn about Regularization.
     </p>
 
-    <a href="linearregression.html">Previos: Linear Regression</a>
+    <a href="linearregression.html">Previous: Linear Regression</a>
     <a href="regularization.html">Up Next: Regularization</a>
 
 </body>
