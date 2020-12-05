@@ -67,7 +67,7 @@
         feature variables and the colours red and blue represent the target variable<br>
     </p>
 
-    <img src="knnvisual.png" alt="KNN Visualisation Graph">
+    <img src="Images/knnvisual.png" alt="KNN Visualisation Graph">
 
     <p>With the K-Nearest Neighbors models, we have to choose one parameter. This parameter <br>
         can be chosen arbitrarily. Here will choose k to be three.<br>
@@ -78,7 +78,7 @@
         We can see this in the updated graph below.<br>
     </p>
 
-    <img src="knnvisualmod.png" alt="KNN Visualisation Graph k = 3">
+    <img src="Images/knnvisualmod.png" alt="KNN Visualisation Graph k = 3">
 
     <p>This graph shows the 3 nearest neighbors of each nre data point (shown in green).<br>
         Two of the points nearest point 1 are blue and 1 is red, this means our KNN model with <br>
@@ -104,33 +104,33 @@
         previously explained: <br>
     </p>
     
-    <img src="importdataset.png" alt="from sklearn import datasets">
+    <img src="Images/importdataset.png" alt="from sklearn import datasets">
 
     <p>We then need to import the clasification model from the sci-kit-learn library
     </p>
     
-    <img src="importknn.png" alt="from sklearn.neighbors import KNeighborsClassifier">
+    <img src="Images/importknn.png" alt="from sklearn.neighbors import KNeighborsClassifier">
     
     <p>We can now instantiate a K Neighbors Classifier using an arbitrary value of 3 neighbors.
     </p>
     
-    <img src="createmodel.png" alt="model = KNeighborsClassifier(n_neighbors=3)">
+    <img src="Images/createmodel.png" alt="model = KNeighborsClassifier(n_neighbors=3)">
    
     <p>Then we can fit the model to the data passing the feature data as the <br>
         first parameter and the target data as the second argument to the fit method.
     </p>
     
-    <img src="fitmodel.png" alt="model.fit(iris.data, iris.target)">
+    <img src="Images/fitmodel.png" alt="model.fit(iris.data, iris.target)">
    
     <p>We can then create some new data points using numpy.
     </p>
     
-    <img src="numpynewpoints.png" alt="model.fit(import numpy as np)">
+    <img src="Images/numpynewpoints.png" alt="model.fit(import numpy as np)">
    
     <p>Then we can predict the target values for the feature data we have just created.
     </p>
     
-    <img src="targetvalues.png" alt="predictions = model.predict(new_points)">
+    <img src="Images/targetvalues.png" alt="predictions = model.predict(new_points)">
     
     <a href="typesofmachinelearning.html">Previous: Different Types of Machine Learning</a>
     <a href="trainingdata.html">Up Next: Train Test Split</a>
