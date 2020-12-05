@@ -27,6 +27,6 @@ body {
     color: #c1c1c1;
 }
 
-p {
+body > p {
     text-align: center;
 }
