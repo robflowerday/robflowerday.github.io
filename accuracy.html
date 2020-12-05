@@ -49,7 +49,7 @@
         First we will find the score of the holdout set.
     </p>
 
-    <img src="testscore.png" alt="Accuracy Score based on test data">
+    <img src="Images/testscore.png" alt="Accuracy Score based on test data">
 
     <p>This gives us a score of 0.95 meaning we based on this data alone, we can assume the <br>
         model predicts labels with unknown data with 95% accuracy. (Most results will not be <br>
@@ -70,7 +70,7 @@
         show you how to get this score and what score is produced using our data and model.
     </p>
 
-    <img src="trainscore.png" alt="Accuracy Score based on training data">
+    <img src="Images/trainscore.png" alt="Accuracy Score based on training data">
 
     <h2>Overfitting and Underfitting</h2>
     <p>As you saw before, we got 2 different accuracy scores when we used our model to <br>
@@ -112,7 +112,7 @@
         we again need to import the data and split it into a training and a testing set.
     </p>
 
-    <img src="importsplitiris.png" alt="Import and split our data">
+    <img src="Images/importsplitiris.png" alt="Import and split our data">
 
     <p>instead of fitting one model though, we now need to fit many models with many <br>
         different values for n_neighbors, then extract their trianing and testing accuracy <br>
@@ -120,7 +120,7 @@
         to their respective lists. The rest of the code, you have seen before.
     </p>
 
-    <img src="traintestscores.png" alt="Scores with for loop">
+    <img src="Images/traintestscores.png" alt="Scores with for loop">
 
     <p>Now we have the scores, but it is much easier to extract insigts from them when we <br>
         can visualise them, so we will plot it on a graph. I wont go into depth on how to <br>
@@ -129,7 +129,7 @@
         matplotlib, and if you want to go further look into tutorials on using seaborn.
     </p>
 
-    <img src="accuracyvisual.png" alt="Visualisation of Accuracy">
+    <img src="Images/accuracyvisual.png" alt="Visualisation of Accuracy">
 
     <p>We want to maximise our models ability to predict the labels of 'unseen' data and so <br>
         we can choose the number of n_neighbors based on the highest score for the model on <br>
