@@ -15,18 +15,14 @@ body {
 
 .top_nav > li {
     display: inline-block;
-    padding-right: 50px;
+    padding: 20px, 50px, 20px, 0;
 }
 
-.top_nav > a {
+.top_nav > li > a {
     text-decoration: none;
     color: #ffffff;
 }
 
 .top_nav > li > a:hover {
     color: #c1c1c1;
-}
-
-body > p {
-    text-align: center;
 }
