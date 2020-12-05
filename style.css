@@ -25,3 +25,7 @@ body {
 .top_nav > li > a:hover {
     color: #c1c1c1;
 }
+
+p {
+    text-align: center;
+}
