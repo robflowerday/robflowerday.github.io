@@ -19,7 +19,7 @@ body {
     text-decoration: none;
     color: #ffffff;
     display: inline-block;
-    padding 20px;
+    padding: 20px;
 }
 
 .top_nav > li > a:hover {
