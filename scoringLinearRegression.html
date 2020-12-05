@@ -24,20 +24,20 @@
         In Mathematical notation this can be show as:
     </p>
 
-    <img src="r2.png" alt="r2 equation">
+    <img src="Images/r2.png" alt="r2 equation">
     
     <p>To visualise this we can plot our data, and our linear regression line, as well as <br>
         the residuals. We would then square the residuals and sum the results to get SSE.
     </p>
 
-    <img src="SSE.png" alt="visualising SSE">
+    <img src="Images/SSE.png" alt="visualising SSE">
 
     <p>Then we could plot the data again and plot a line at the mean of our price data, <br>
         showing the residuals based on this line. Through the same process of squaring <br>
         these distances and adding them together, we can get SST.
     </p>
 
-    <img src="SST.png" alt="visualising SST">
+    <img src="Images/SST.png" alt="visualising SST">
 
     <p>We then simply follow the equation above substituting SSE and SST with our results.
     </p>
@@ -69,7 +69,7 @@
         the model.
     </p>
 
-    <img src="r2score.png" alt="printing r2 score">
+    <img src="Images/r2score.png" alt="printing r2 score">
 
     <p>This score was not very high, which may seem odd as the data seemed to be fairly well <br>
         correlated.<br>
@@ -80,7 +80,7 @@
         shown here.
     </p>
 
-    <img src="differentresults.png" alt="different results, same data">
+    <img src="Images/differentresults.png" alt="different results, same data">
 
     <p>As can be seen, where the data is split can have a big impact on the score <br>
         achieved.<br>
@@ -103,7 +103,7 @@
         To call the function cross_val_score, it must be imported from sklearn as below.
     </p>
 
-    <img src="importcross_val_score.png" alt="Import corss_val_score form sklearn">
+    <img src="Images/importcross_val_score.png" alt="Import corss_val_score form sklearn">
 
     <p>Then we have to pass it the Model we'd like it to use, the feature data we'd like <br>
         it to use, the target data we'd like it to use, and the number of portions we'd like <br>
@@ -112,7 +112,7 @@
         called k-fold Cross Validation.
     </p>
 
-    <img src="k-foldimplementation.png" alt="cross_val_score implementation">
+    <img src="Images/k-foldimplementation.png" alt="cross_val_score implementation">
 
     <p>As can be seen, we are given a list of scores. Each score in the list corresponds to <br>
         the score on each potion ('fold') of the data, being used as a test set.<br>
@@ -121,7 +121,7 @@
         the same scores every time. 
     </p>
 
-    <img src="k-foldmulti.png" alt="same code, same scores">
+    <img src="Images/k-foldmulti.png" alt="same code, same scores">
 
     <p>This is because each time the model is trained, the test <br>
         data is, in this order, the first k% of the data, then the second k % of the data, <br>
@@ -135,7 +135,7 @@
         line changes only slightly each time.
     </p>
 
-    <img src="firstthreefolds.png" alt="First 3 folds of data">
+    <img src="Images/firstthreefolds.png" alt="First 3 folds of data">
     
     <p>The first 3 graphs show the first 3 folds with respective scores of 0.70708692, <br>
         0.63476138 and 0.50385441 can be seen to roughly follow the correlation of the <br>
@@ -143,7 +143,7 @@
         offset from the line, by increasing amounts for each fold.
     </p>
 
-    <img src="lasttwofolds.png" alt="Last two folds of data">
+    <img src="Images/lasttwofolds.png" alt="Last two folds of data">
 
     <p>The last 2 models performed poorly. From looking at the graph, it is likely that in <br>
         the 4th fold this was due to a large number of outliers in the testing set, and in <br>
@@ -159,7 +159,7 @@
         calculate accurate predictions of house prices using their number of rooms.
     </p>
 
-    <img src="averagescore.png" alt="average of scores">
+    <img src="Images/averagescore.png" alt="average of scores">
 
     <p>Using only one of these scores rather than the average, would only show us how the <br>
         model will predict on data that fits the distribution of the appropriate test data <br>
