@@ -13,13 +13,14 @@ body {
 
 .top_nav > li {
     right-padding: 50px;
+    top-padding: 20px;
+    bottom-padding: 20px;
     display: inline-block;
 }
 
 .top_nav > li > a {
     text-decoration: none;
     color: #ffffff;
-    padding: 20px;
 }
 
 .top_nav > li > a:hover {
