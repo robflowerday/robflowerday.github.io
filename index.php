@@ -3,9 +3,5 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <ul class="top_nav">
-        <li><a href="courses.html">go to courses</a></li>
-        <li><a href="cv.html">CV</a></li>
-    </ul>
-
+    <?php include("header.html");?>
 </body>
