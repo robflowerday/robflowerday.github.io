@@ -169,10 +169,21 @@
         is where we would use statistical significance to guide our decisions, though I will <br>
         not go into that here.<br>
         <br>
-        Next we'll learn about Regularization.
+        We are also interested in the spread of our scores, this can be best measured using <br>
+        standard deviation or variance, but features like the range and interquartile range, <br>
+        might also be of interest. If our model has a low level of spread, we can be fairly <br>
+        confident that when we use our model on 'unseen' data, the predictive perforance of <br>
+        the model is likely to be close to the average of our cross validation scores. We <br>
+        cannot say the same if our spread is high, in this case, the predictive performance <br>
+        is likely to lie within the range of scores calculated using cross_val_score, but we <br>
+        cannot say for sure where and the range may be large. This is another use for using <br>
+        probability, this time to create confidence intervals for where our predictive <br>
+        performance might lie in our range of scores.<br>
+        <br>
+        Next we'll learn about Overfitting.
     </p>
 
-    <a href="linearregression.html">Previous: Linear Regression</a>
-    <a href="regularization.html">Up Next: Regularization</a>
+    <a href="linearregression.html">Previos: Linear Regression</a>
+    <a href="overfitting.html">Up Next: Regularization</a>
 
 </body>
