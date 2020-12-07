@@ -29,3 +29,13 @@ body {
 p {
     text-align: center;
 }
+
+a > h2 {
+    text-decoration: none;  
+    color: #000000
+}
+
+a > p {
+    text-decoration: none;  
+    color: #000000
+}
