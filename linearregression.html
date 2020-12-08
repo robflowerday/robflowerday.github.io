@@ -143,8 +143,48 @@
         using the equation y = mx + c + e, we use an equation y = m1x1 + m2 x2 + ... + mnxn + c + e<br>
         where we have n features, here, we can change mi for any value i and c to fit the best <br>
         line and the error function is calculated in a similar way.
+    </p>
+    
+    <h2>When to use Linear Regression</h2>
+    <p>Simple Linear Regression (Linear Regression with only one predictor variable and one 
+        target variable) is only an appropriate model to use when we either know, or have 
+        reason to believe that their is a correlation, positive or negative between the 
+        predictor variable and the target variable, that is to say, if we were to plot a 
+        graph with the predictor variable on the x-axis and the target variable on the 
+        y-axis, we could draw a strait line on the graph such that all data points would sit 
+        on the line, with the only reason any of the data points are offset from the line
+        being reasonably described by random noise. This noise must be random, as if the 
+        noise also follows a pattern, it can be predicted using a different model.
         
-        In the next lesson we will see how we can measure the performance of our Regression <br>
+        Multiple Linear Regression is used in much the same circumstances, except that we 
+        have more than one predictor variable. The difference being that it is much harder 
+        to graph. For Linear Regression to be the appropriate model however, it should be 
+        possible to draw a graph for each individual predictor variable in the same ways 
+        as above as a Simple Linear Regression Model. If this cannot be done for any of 
+        our predictor variable, is it not appropriate to use this variable in our Linear 
+        Regression Model.
+    </p>
+    
+    <h2>Mathematics of finding our Line</h2>
+    
+    <h2>The Problem of Co-Linearity</h2>
+    <p>Co-Linearity is something you may have to consider if you are performing Multiple 
+        Linear Regression, Linear Regression with more that one predictor variable. It 
+        occurs when two, or more of your predictor variables correlate highly with each 
+        other. One way to test this is to use create a Linear Regression model based on 
+        the offending predictor variables, with one as the target variable and find the 
+        score of the model as shown above, performing visualisations along the way, a 
+        high score here suggests colinearity.
+        
+        So why is it a problem?
+        
+        The answer, for predicting varialbes, it is not a problem at all, the predictions 
+        will be the same, however, if 2 predictor variables are corelated, then one of 
+        the variables are redunant in the model as the two variables are showing the same 
+        pattern. If one of the variables increases, so does the other, 
+    </p>
+        
+    <p>In the next lesson we will see how we can measure the performance of our Regression <br>
         model.
     </p>    
 
