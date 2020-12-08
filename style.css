@@ -22,9 +22,13 @@
 
 .mlcourselink {
     text-decoration: none;  
-    color: #000000
+    color: #000000;
 }
 
 .mlcourselink:hover {
-    color: #696969
+    color: #696969;
+}
+
+body {
+    text-align: center;
 }
