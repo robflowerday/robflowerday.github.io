@@ -14,11 +14,25 @@
     <p> When talking about Machine Learning, Linear Regression is a supervised learning <br>
         algorithm like our KNN model, unlike our KNN model however it is a regression model <br>
         rather than a clasification model. This means that is predicts label as continous <br>
-        values rather than discrete values. Linear Regression models are used to predict a <br>
-        relationship between two factors.<br>
+        values rather than discrete values. Linear Regression models are used to attempt to 
+        describe a linear relationship between two factors, based on a correlation between 
+        the two factors.<br>
         <br>
-        Given two sets of data points, each describing a seperate variable, linear regression<br>
-        entails creating a straitline that fits these points in in some way optimally. <br>
+        A correlation between to factos is a measure that describe whether two factors are 
+        related to one another. If as the value of one variable increases, the other also 
+        increases, we have a positive correlation, if as the value of one varible increases, 
+        the other decreases, there is a negative correlation and if the value of one variable 
+        going up or down, has no bearing on the other variable going up or down, there is no 
+        correlation. We measure correlation on a scale between -1 and 1, 1 being a perfect 
+        positive correlation, meaning, as the value of one variable increases, we know that 
+        the value of the other variable will go up to, and from the change in the first 
+        variable, we could calculate exactly how much the value of the second variable will 
+        change. The same is true in reverse for a correlation of -1. For a correlation of 0, 
+        we cannot draw any relevant predictions or inverences about one variable from a 
+        change in the other.
+        <br>
+        Given two sets of data points, each describing a seperate variable, Linear Regression<br>
+        attempts to fit a straitline that fits these points in in some way optimally. <br>
         <br>
         A strait line on a graph in 2 imentions can be written as y = mx + c, where y is the <br>
         target variable that we want to predict, x is the feature vaiable used for prediction, <br>
@@ -164,31 +178,12 @@
         our predictor variable, is it not appropriate to use this variable in our Linear 
         Regression Model.
     </p>
-    
-    <h2>Mathematics of finding our Line</h2>
-    
-    <h2>The Problem of Co-Linearity</h2>
-    <p>Co-Linearity is something you may have to consider if you are performing Multiple 
-        Linear Regression, Linear Regression with more that one predictor variable. It 
-        occurs when two, or more of your predictor variables correlate highly with each 
-        other. One way to test this is to use create a Linear Regression model based on 
-        the offending predictor variables, with one as the target variable and find the 
-        score of the model as shown above, performing visualisations along the way, a 
-        high score here suggests colinearity.
-        
-        So why is it a problem?
-        
-        The answer, for predicting varialbes, it is not a problem at all, the predictions 
-        will be the same, however, if 2 predictor variables are corelated, then one of 
-        the variables are redunant in the model as the two variables are showing the same 
-        pattern. If one of the variables increases, so does the other, 
-    </p>
         
     <p>In the next lesson we will see how we can measure the performance of our Regression <br>
         model.
-    </p>    
+    </p>
 
     <a href="accuracy.html">Previous: Accuracy Score</a>
-    <a href="scoringLinearRegression.html">Up Next: Measureing Performance of Linear Regression</a>
+    <a href="scoringLinearRegression.html">Up Next: Measuring Performance of Linear Regression</a>
 
 </body>
