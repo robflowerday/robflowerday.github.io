@@ -1,124 +1,135 @@
 <!DOCTYPE html>
 <head></head>
+<body><!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <h1>Tpyes of Machine Learning</h1>
-    <p>There are three main subsets of Machine Learning. Supervised Learning, Unsupervised 
-        Learning and Reinforcement Learning. They all try to use data to infer a 
-        (usually benificial) outcome, prediction or action.
+    <ul class="top_nav">
+        <li><a href="machinelearningwithpython.html">Machine Learning with Python</a></li>
+        <li><a href="cv.html">CV</a></li>
+    </ul>
     
-        The aim of Supervised and Unsupervised Learning is predict a target variable. This 
-        could be the price of a house, the species of a plant or the price of a stock, 
-        using feature data. This is data we already know, for example, the number of rooms 
-        and location of a house, the petal length and height of a plant or the previous 
-        days stock price.
-
-        Both supervised and unsupervised learning aim to solve these and other problems by 
-        minimising a loss function. This is a mathematical function which determines how well 
-        the model performs. For example, the loss function for a model that predicts house 
-        prices may be measuring the loss as the difference between the actual price and the 
-        predicted price of the house. We will speack more about loss functions late in the 
+    <h1>Tpyes of Machine Learning</h1>
+    <p>There are three main subsets of Machine Learning. Supervised Learning, Unsupervised <br>
+        Learning and Reinforcement Learning. They all try to use data to infer a <br>
+        (usually benificial) outcome, prediction or action.<br>
+        <br>
+        The aim of Supervised and Unsupervised Learning is predict a target variable. This <br>
+        could be the price of a house, the species of a plant or the price of a stock, <br>
+        using feature data. This is data we already know, for example, the number of rooms <br>
+        and location of a house, the petal length and height of a plant or the previous <br>
+        days stock price.<br>
+        <br>
+        Both supervised and unsupervised learning aim to solve these and other problems by <br>
+        minimising a loss function. This is a mathematical function which determines how well <br>
+        the model performs. For example, the loss function for a model that predicts house <br>
+        prices may be measuring the loss as the difference between the actual price and the <br>
+        predicted price of the house. We will speack more about loss functions late in the <br>
         course.
+    </p>
    
     <h2>Supervised Learning</h2>
-    <p>Supervised Learning is used on labeled data (data for which we know the possible values 
-        of the target variable).
-
-        Classification models are created to solve classification problems. These models can 
-        be called Classifiers. 'Once trained' (we'll get to that in the next lesson). 
-        A Classifier takes unlabeled feature data as input and outputs a prediction of the 
-        'correct' label for that data.
-
-        There are two main types of supervised learning problems. Classification and 
-        Regression.
-
-        Classification problems are problems where the labeled data are discrete. This means 
-        there is a finite amount of values the target variable can take. In program this 
+    <p>Supervised Learning is used on labeled data (data for which we know the possible values <br>
+        of the target variable).<br>
+        <br>
+        Classification models are created to solve classification problems. These models can <br>
+        be called Classifiers. 'Once trained' (we'll get to that in the next lesson). <br>
+        A Classifier takes unlabeled feature data as input and outputs a prediction of the <br>
+        'correct' label for that data.<br>
+        <br>
+        There are two main types of supervised learning problems. Classification and <br>
+        Regression.<br>
+        <br>
+        Classification problems are problems where the labeled data are discrete. This means <br>
+        there is a finite amount of values the target variable can take. In program this <br>
         data is ussually represented as catagorical or boolan data types.
-
-        Regression problems are such that the labeled data is continuous. This means the 
-        range of values the data can take is continous, and therefore infinite 
-        (or may as well be). We ussually consider price data continuous as though it is 
-        technically discrete, there is such a wide range of values that are measured in a 
-        logical order (using the number system) that it is for practical purposes a 
-        continuous dataset.
-    
-        2 examples of supervised learning models are:
-        
-        House Price Prediction:
-
-        predicting the price of a house given the number of rooms it has, the city it is in 
-        and the crime rate in the city
-        
-        The feature data here are the number of rooms in the house, the city it is in and 
-        the crime rate in the city
-
-        The target data here is the price of a house
-
-        This is a Regression problem because the target data is (for all intensive purposes) 
-        continuous.
-
-        Spam Email Prediction:
-
-        predicting weather an email is spam based on the email address of the sender, the 
-        subject line, the content of the email and the time of day the email was sent.
-
-        The feature data here is the email address of the sender, the subject line, the 
-        content of the email and the time of day the email was sent.
-
-        The target data is whether or not the email is spam
-
-        This is a Classification problem because the target data is discrete, having only 
+        <br>
+        Regression problems are such that the labeled data is continuous. This means the <br>
+        range of values the data can take is continous, and therefore infinite <br>
+        (or may as well be). We ussually consider price data continuous as though it is <br>
+        technically discrete, there is such a wide range of values that are measured in a <br>
+        logical order (using the number system) that it is for practical purposes a <br>
+        continuous dataset.<br>
+        <br>
+        2 examples of supervised learning models are:<br>
+        <br>
+        House Price Prediction:<br>
+        <br>
+        predicting the price of a house given the number of rooms it has, the city it is in <br>
+        and the crime rate in the city<br>
+        <br>
+        The feature data here are the number of rooms in the house, the city it is in and <br>
+        the crime rate in the city<br>
+        <br>
+        The target data here is the price of a house<br>
+        <br>
+        This is a Regression problem because the target data is (for all intensive purposes) <br>
+        continuous.<br>
+        <br>
+        Spam Email Prediction:<br>
+        <br>
+        predicting weather an email is spam based on the email address of the sender, the <br>
+        subject line, the content of the email and the time of day the email was sent.<br>
+        <br>
+        The feature data here is the email address of the sender, the subject line, the <br>
+        content of the email and the time of day the email was sent.<br>
+        <br>
+        The target data is whether or not the email is spam<br>
+        <br>
+        This is a Classification problem because the target data is discrete, having only <br>
         two possible options (spam or not spam).
     </p>
 
     <h2>Unsupervised Learning</h2>
-    <p>Unsupervised learning is the task of clustering data into groups based on similarities 
-        or insights drawn from the feature data. It uses unlabed data meaning the target data 
-        it is trying to predict (the cluster / group the data should be put into) is not 
-        previously known.
-
-        Though we can use supervised learning on the above problem of predicting spam email 
-        by assuming there are two cluster and not giving the model information about whether 
+    <p>Unsupervised learning is the task of clustering data into groups based on similarities <br>
+        or insights drawn from the feature data. It uses unlabed data meaning the target data <br>
+        it is trying to predict (the cluster / group the data should be put into) is not <br>
+        previously known.<br>
+        <br>
+        Though we can use supervised learning on the above problem of predicting spam email <br>
+        by assuming there are two cluster and not giving the model information about whether <br>
         the emails are spam or not. Unsupervised learning models are more useful for problems 
-        like the clusetering news articles by their content with similar news articles. This 
-        can be used on news sites to recommend similar articles to the one you may be reading 
-        without a human needing to know what each article is about (which may enatail a 
+        like the clusetering news articles by their content with similar news articles. This <br>
+        can be used on news sites to recommend similar articles to the one you may be reading <br>
+        without a human needing to know what each article is about (which may enatail a <br>
         laborious process of labelling the genre of each new article).
     </p>
 
     <h2>Reinforcement Learning</h2>
-    <p>Instead of having a 'fixed' set of data to learn from, reinforcement learning uses an 
-        agent that collects data from its environment. (an agent being an entity in an 
+    <p>Instead of having a 'fixed' set of data to learn from, reinforcement learning uses an <br>
+        agent that collects data from its environment. (an agent being an entity in an <br>
         environment like a person in a bar, the person being the agent and the bar being the 
-        environment, or mario in a mario level with mario being the agent and the level being 
-        the environment)
-        
-        The reinforcement leaning model is trying to maximize a reward function. This reward 
-        function could for example be the score on a mario level given a vertain strategy of 
-        playing.
-
-        The agent interacts with the environment to gain information which it uses to inform 
-        the agents future decisions and moves. It does this in either an exploratory, or an 
-        explotitave manner.
-
-        When doing so in an exploititative manner, it will choose the next decision based on 
-        what decision it believes will give it the greatest reward.
-        
-        When acting on an exploratory manner, it acts in a sub optimal way to gain more 
-        information about its surroundings and how they effect the reward it can gain from 
+        environment, or mario in a mario level with mario being the agent and the level being <br>
+        the environment)<br>
+        <br>
+        The reinforcement leaning model is trying to maximize a reward function. This reward <br>
+        function could for example be the score on a mario level given a vertain strategy of <br>
+        playing.<br>
+        <br>
+        The agent interacts with the environment to gain information which it uses to inform <br>
+        the agents future decisions and moves. It does this in either an exploratory, or an <br>
+        explotitave manner.<br>
+        <br>
+        When doing so in an exploititative manner, it will choose the next decision based on <br>
+        what decision it believes will give it the greatest reward.<br>
+        <br>
+        When acting on an exploratory manner, it acts in a sub optimal way to gain more <br>
+        information about its surroundings and how they effect the reward it can gain from <br>
         any particular move, or set of moves.
     </p>
 
     <h2>Important Note</h2>
-    <p>In this course, though I may touch on the following topics, I do not intend to 
-        explain them here in great detail. collecting data, cleaning data and dealing with 
-        messy data, visualising data or exploratory data analysis.
-    
-        This does not mean that they are unimportant, infact they are all of great importance. 
-        So much so that they deserve their own course.
-    
-        I have not made a course on these yet, but until I do, many excelent courses and 
-        tutorials can be found for there topics online.</p>
+    <p>In this course, though I may touch on the following topics, I do not intend to <br>
+        explain them here in great detail. collecting data, cleaning data and dealing with <br>
+        messy data, visualising data or exploratory data analysis.<br>
+        <br>
+        This does not mean that they are unimportant, infact they are all of great importance. <br>
+        So much so that they deserve their own course.<br>
+        <br>
+        I have not made a course on these yet, but until I do, many excelent courses and <br>
+        tutorials can be found for there topics online.
+    </p>
 
     <a href="knn.html">UP Next: KNN (K-Nearest Neighbors)</a>
 </body>
