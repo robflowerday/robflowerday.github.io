@@ -30,3 +30,7 @@ body {
     text-decoration: none;  
     color: #000000
 }
+
+.mlcourselink:hover {
+    color: #696969
+}
