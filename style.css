@@ -29,7 +29,7 @@
     color: #696969;
 }
 
-body {
+p, h1, h2 {
     margin-left: auto;
     margin-right: auto;
 }
