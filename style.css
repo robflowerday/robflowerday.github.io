@@ -1,47 +1,79 @@
-.top_nav {
-    background-color: #595959;
-    color: #ffffff;
-    list-style: none;
+td {
     text-align: center;
-    padding: 20px 0 20px 0;
+    width: 65px;
+    height: 65px;
 }
 
-.top_nav > li {
+.blackSquare {
+    background-color: black;
+    z-index: 1;
+    border: 1px solid black;
+}
+
+.whiteSquare {
+    background-color: white;
+    z-index: 2;
+    border: 1px solid black;
+}
+
+.brown-piece {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.gold-piece {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.possible-position {
+    width: 5px;
+    height: 5px;
+    padding: 12px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.brown-king {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: darkred;
+    border: 1px solid darkred;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.gold-king {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+p {
     display: inline-block;
-    padding-right: 50px;
 }
 
-.top_nav > li > a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.top_nav > li > a:hover {
-    color: #c1c1c1;
-}
-
-.mlcourselink {
-    text-decoration: none;  
-    color: #000000;
-}
-
-.mlcourselink:hover {
-    color: #696969;
-}
-
-p, h2 {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-img {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+span {
+    display: inline-block;
 }
 
 h1 {
-    text-align: center;
+    display: inline-block;
 }
