@@ -1,0 +1,79 @@
+td {
+    text-align: center;
+    width: 65px;
+    height: 65px;
+}
+
+.blackSquare {
+    background-color: black;
+    z-index: 1;
+    border: 1px solid black;
+}
+
+.whiteSquare {
+    background-color: white;
+    z-index: 2;
+    border: 1px solid black;
+}
+
+.brown-piece {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.gold-piece {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.possible-position {
+    width: 5px;
+    height: 5px;
+    padding: 12px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.brown-king {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: darkred;
+    border: 1px solid darkred;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.gold-king {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+p {
+    display: inline-block;
+}
+
+span {
+    display: inline-block;
+}
+
+h1 {
+    display: inline-block;
+}
