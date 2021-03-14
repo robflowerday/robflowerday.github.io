@@ -1,28 +1,4 @@
-let board = [null, "0", null, "1", null, "2", null, "3",
-             "4", null, "5", null, "6", null, "7", null,
-             null, "8", null, "9", null, "10", null, "11",
-             null, null, null, null, null, null, null, null,
-             null, null, null, null, null, null, null, null,
-             "12", null, "13", null, "14", null, "15", null,
-             null, "16", null, "17", null, "18", null, "19",
-             "20", null, "21", null, "22", null, "23", null];
 
-let kingList = {"0": false,"1": false, "2": false, "3": false, "4": false, "5": false, "6": false, "7": false, "8": false, "9": false, "9": false, "10": false, "11": false, "12": false, "13": false, "14": false, "15": false, "16": false, "17": false, "18": false, "19": false, "20": false, "21": false, "22": false, "23": false};
-
-const cells = document.querySelectorAll("td");
-let brownPieces = document.querySelectorAll("p");
-let goldPieces = document.querySelectorAll("span");
-
-let selectedPieceIndex = -1;
-let selectedPieceId = -1;   
-let newSpotIndex = -1;
-
-let turn = "gold";
-
-let persistentNewBoardIndex = -1;
-let persistentBrownPieceId = -1;
-
-let persistentGoldDestination = -1;
 
 function recalibrateVariables() {
     brownPieces = document.querySelectorAll("p");
