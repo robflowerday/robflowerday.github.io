@@ -1,4 +1,4 @@
-import { goldMove } from './gold_move_functions.js';
+import { addGoldEventListenersFunction } from './gold_move_functions.js';
 
 let board = [null, "0", null, "1", null, "2", null, "3",
              "4", null, "5", null, "6", null, "7", null,
@@ -27,7 +27,18 @@ let persistentBrownPieceId = -1;
 let persistentGoldDestination = -1;
 
 
+function recalibrateVariables() {
+    brownPieces = document.querySelectorAll("p");
+    goldPieces = document.querySelectorAll("span");
+}
 
+function goldMove() {
+    recalibrateVariables();
+    // loop through each gold piece
+    for (let i = 0; i < goldPieces.length; i++) {
+        goldPieces[i].addEventListener("click", addGoldEventListenersFunction);
+    }
+}
 
 goldMove();
 
