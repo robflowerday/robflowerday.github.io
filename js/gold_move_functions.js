@@ -1,19 +1,4 @@
-
-
-function recalibrateVariables() {
-    brownPieces = document.querySelectorAll("p");
-    goldPieces = document.querySelectorAll("span");
-}
-
-export function goldMove() {
-    recalibrateVariables();
-    // loop through each gold piece
-    for (let i = 0; i < goldPieces.length; i++) {
-        goldPieces[i].addEventListener("click", addGoldEventListenersFunction);
-    }
-}
-
-function addGoldEventListenersFunction() {
+export function addGoldEventListenersFunction() {
     resetGoldBorders();
     resetGreenSpots();
     addGreenBorder(this);
