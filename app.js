@@ -534,3 +534,16 @@ function winTest() {
     }
     return false;
 }
+
+/// ---------------------------------------------------------------------------------------------------
+/// Create Brown move choice
+
+function createStateList() {
+    return [];
+}
+
+function chooseBrownMove() {
+    let stateList = createStateList();
+    
+}
+}
