@@ -1,4 +1,4 @@
-import { addGoldEventListenersFunction } from './gold_move_functions.js';
+///import { addGoldEventListenersFunction } from './gold_move_functions.js';
 
 let board = [null, "0", null, "1", null, "2", null, "3",
              "4", null, "5", null, "6", null, "7", null,
