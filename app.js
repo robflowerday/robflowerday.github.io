@@ -436,7 +436,7 @@ function getImmediateBrownSpots(boardIndex) {
 
 /// fundamental function
 function collectJarvisMove(state) {
-    let maxDepth = 3;
+    let maxDepth = 4;
 
     /// create empty state list
     let stateList = [];
