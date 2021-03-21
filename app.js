@@ -8,7 +8,7 @@ class State {
         this.board = board;
         this.kingList = kingList;
         this.player = player;
-        this.depth = depth;s
+        this.depth = depth;
         this.score = -10000;
         this.parent = parent;
         this.children = children;
