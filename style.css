@@ -1,3 +1,72 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Start styling navbar
+ */
+
+.navbar-left,
+.navbar-right {
+   display: inline-block;
+}
+
+.navbar {
+   position: relative;
+}
+
+.navbar-right {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+.navbar {
+   background: Black;
+}
+
+.navbar-brand {
+   background: RoyalBlue;
+}
+
+.navbar-brand,
+.navbar .nav-link {
+   color: White;
+   text-decoration: none;
+}
+
+.navbar-brand,
+.navbar .nav-link {
+   display: inline-block;
+   padding: 15px;
+}
+
+.navbar .nav-link:hover {
+   color: LightGray;
+}
+@media (max-width: 842px) {
+   /*
+      If viewport's width is smaller than or equals to 842px,
+      CSS rules put here will override things of the sections above
+   */
+}
+
+@media (max-width: 842px) {
+   .navbar-right,
+   .navbar-left {
+      display: block;
+   }
+
+   .navbar-right {
+      position: static;
+   }
+
+   .navbar .nav-link {
+      display: block;
+   }
+}
 td {
     text-align: center;
     width: 65px;
